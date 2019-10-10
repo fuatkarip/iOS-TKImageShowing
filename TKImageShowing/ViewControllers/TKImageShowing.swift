@@ -106,7 +106,7 @@ open class TKImageShowing: UIViewController, Zoomable{
     }
     
     func setupCloseButton() {
-        self.btnClose = UIButton(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
+        self.btnClose = UIButton(frame: CGRect(x: view.frame.width - 35, y: view.frame.height - 35, width: 35, height: 35))
         let imvClose = UIImageView(frame: CGRect(x: 12.5, y: 12.5, width: 15, height: 15))
         imvClose.contentMode = .scaleToFill
         
@@ -133,6 +133,7 @@ open class TKImageShowing: UIViewController, Zoomable{
             }
             currentCell.resetZoom(isDismiss:true)
         }
+        dismiss(animated: true, completion: nil)
     }
     
     @objc func showActionView() {
