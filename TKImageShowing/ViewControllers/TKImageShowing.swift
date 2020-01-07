@@ -42,6 +42,11 @@ open class TKImageShowing: UIViewController, Zoomable{
         self.modalTransitionStyle = .crossDissolve
         self.transitioningDelegate = self
         super.viewDidLoad()
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(closing))
+    swipeDown.direction = .down
+    self.view.addGestureRecognizer(swipeDown)
+        
         commonInit()
     }
     
